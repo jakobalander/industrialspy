@@ -11,17 +11,19 @@ public class PermutationsTest {
 
     private TreeSet<String> abc_permutations;
     private TreeSet<String> aaa_permutations;
+    private TreeSet<String> aab_permutations;
 
     @Before
     public void setup() throws Exception {
         Permutations p = new Permutations();
         abc_permutations = p.createPermuations("abc");
         aaa_permutations = p.createPermuations("aaa");
+        aab_permutations = p.createPermuations("aab");
     }
 
     @Test
     public void checkNumberOfPermutationsOf_abc_is_6() {
-        Assert.assertEquals(abc_permutations.size(), 6);
+        Assert.assertEquals(6, abc_permutations.size());
     }
 
     @Test
@@ -62,5 +64,25 @@ public class PermutationsTest {
     @Test
     public void checkPermutationOf_aaa_contains_aaa() {
         Assert.assertTrue(aaa_permutations.contains("aaa"));
+    }
+
+    @Test
+    public void checkNumberOfPermutationsOf_aab_is_3() {
+        Assert.assertEquals(3, aab_permutations.size());
+    }
+
+    @Test
+    public void checkPermutationsOf_aab_contains_aab() {
+        Assert.assertTrue(aab_permutations.contains("abc"));
+    }
+
+    @Test
+    public void checkPermutationsOf_aab_contains_aba() {
+        Assert.assertTrue(aab_permutations.contains("aba"));
+    }
+
+    @Test
+    public void checkPermutationsOf_aab_contains_baa() {
+        Assert.assertTrue(aab_permutations.contains("baa"));
     }
 }
