@@ -5,11 +5,6 @@ import java.util.TreeSet;
  */
 public class Permutations {
 
-    private final StringSplitter splitter;
-
-    Permutations(StringSplitter splitter) {
-        this.splitter = splitter;
-    }
     TreeSet<String> createPermuations(String s) {
         TreeSet<String> permutations;
         permutations = recurse(s);
@@ -19,16 +14,16 @@ public class Permutations {
     private TreeSet<String> recurse(String base) {
         TreeSet<String> set = new TreeSet<>();
         for(int i=0; i<base.length(); i++) {
-            splitter.split(base, i);
+            Split split = new Split(base, i);
             TreeSet<String> parts;
-            if(splitter.getRemainder().length() > 1) {
-                 parts = recurse(splitter.getRemainder());
+            if(split.getRemainder().length() > 1) {
+                 parts = recurse(split.getRemainder());
             } else {
                 parts = new TreeSet<>();
-                parts.add(splitter.getRemainder());
+                parts.add(split.getRemainder());
             }
             for(String str: parts) {
-                set.add(splitter.getChar() + str);
+                set.add(split.getChar() + str);
             }
         }
         return set;

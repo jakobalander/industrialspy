@@ -14,8 +14,7 @@ public class PermutationsTest {
 
     @Before
     public void setup() throws Exception {
-        StringSplitter splitter = new Split();
-        Permutations p = new Permutations(splitter);
+        Permutations p = new Permutations();
         abc_permutations = p.createPermuations("abc");
         aaa_permutations = p.createPermuations("aaa");
     }

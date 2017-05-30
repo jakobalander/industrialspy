@@ -1,11 +1,14 @@
 /**
  * Created by alander on 2017-05-21.
  */
-public class Split implements StringSplitter {
+public class Split {
     private char ch;
     private String remainder;
 
-    @Override
+    Split(String base, int index) {
+        split(base, index);
+    }
+
     public void split(String base, int index) {
         ch = base.charAt(index);
         String firstPart = base.substring(0,index);
@@ -16,12 +19,10 @@ public class Split implements StringSplitter {
         remainder = firstPart + lastPart;
     }
 
-    @Override
     public char getChar() {
         return this.ch;
     }
 
-    @Override
     public String getRemainder() {
         return remainder;
     }

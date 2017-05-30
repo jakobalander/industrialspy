@@ -9,40 +9,40 @@ import static org.junit.Assert.*;
  */
 public class SplitTest {
 
-    private Split splitter;
+    private Split split_abcde_0;
+    private Split split_abcde_2;
+    private Split split_abcde_4;
 
     @Before
     public void before() {
-        splitter = new Split();
+        split_abcde_0 = new Split("abcde", 0);
+        split_abcde_2 = new Split("abcde", 2);
+        split_abcde_4 = new Split("abcde", 4);
+
     }
 
     @Test
     public void testExtractionOfFirstCharacter() throws Exception {
-        splitter.split("abcde", 0);
-        Assert.assertEquals('a', splitter.getChar());
+        Assert.assertEquals('a', split_abcde_0.getChar());
     }
 
     @Test
     public void testExtractionOfLastCharacter() throws Exception {
-        splitter.split("abcde", 4);
-        Assert.assertEquals('e', splitter.getChar());
+        Assert.assertEquals('e', split_abcde_4.getChar());
     }
 
     @Test
     public void testCompositionOfRemainderWhenFirstCharIsExtracted() throws Exception {
-        splitter.split("abcde", 0);
-        Assert.assertEquals("bcde", splitter.getRemainder());
+        Assert.assertEquals("bcde", split_abcde_0.getRemainder());
     }
 
     @Test
     public void testCompositionOfRemainderWhenLastCharIsExtracted() throws Exception {
-        splitter.split("abcde", 4);
-        Assert.assertEquals("abcd", splitter.getRemainder());
+        Assert.assertEquals("abcd", split_abcde_4.getRemainder());
     }
 
     @Test
     public void testCompositionOfRemainderWhenMiddleCharIsExtracted() throws Exception {
-        splitter.split("abcde", 2);
-        Assert.assertEquals("abde", splitter.getRemainder());
+        Assert.assertEquals("abde", split_abcde_2.getRemainder());
     }
 }
