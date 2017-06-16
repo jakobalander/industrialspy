@@ -23,6 +23,7 @@ public class Permutations {
                 parts.add(split.getRemainder());
             }
             for(String str: parts) {
+                set.add(str);
                 set.add(split.getChar() + str);
             }
         }

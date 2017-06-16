@@ -1,5 +1,6 @@
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.TreeSet;
@@ -23,7 +24,52 @@ public class PermutationsTest {
 
     @Test
     public void checkNumberOfPermutationsOf_abc_is_6() {
-        Assert.assertEquals(6, abc_permutations.size());
+        Assert.assertEquals(15, abc_permutations.size());
+    }
+
+    @Test
+    public void checkPermutationsOf_abc_contains_a() {
+        Assert.assertTrue(abc_permutations.contains("a"));
+    }
+
+    @Test
+    public void checkPermutationsOf_abc_contains_b() {
+        Assert.assertTrue(abc_permutations.contains("b"));
+    }
+
+    @Test
+    public void checkPermutationsOf_abc_contains_c() {
+        Assert.assertTrue(abc_permutations.contains("c"));
+    }
+
+    @Test
+    public void checkPermutationsOf_abc_contains_ab() {
+        Assert.assertTrue(abc_permutations.contains("ab"));
+    }
+
+    @Test
+    public void checkPermutationsOf_abc_contains_ac() {
+        Assert.assertTrue(abc_permutations.contains("ac"));
+    }
+
+    @Test
+    public void checkPermutationsOf_abc_contains_ba() {
+        Assert.assertTrue(abc_permutations.contains("ba"));
+    }
+
+    @Test
+    public void checkPermutationsOf_abc_contains_bc() {
+        Assert.assertTrue(abc_permutations.contains("bc"));
+    }
+
+    @Test
+    public void checkPermutationsOf_abc_contains_ca() {
+        Assert.assertTrue(abc_permutations.contains("ca"));
+    }
+
+    @Test
+    public void checkPermutationsOf_abc_contains_cb() {
+        Assert.assertTrue(abc_permutations.contains("cb"));
     }
 
     @Test
@@ -57,8 +103,18 @@ public class PermutationsTest {
     }
 
     @Test
-    public void checkNumberOfPermutationsOf_aaa_is_1() {
-        Assert.assertEquals(1, aaa_permutations.size());
+    public void checkNumberOfPermutationsOf_aaa_is_3() {
+        Assert.assertEquals(3, aaa_permutations.size());
+    }
+
+    @Test
+    public void checkPermutationOf_aaa_contains_a() {
+        Assert.assertTrue(aaa_permutations.contains("a"));
+    }
+
+    @Test
+    public void checkPermutationsOf_aaa_contains_aa() {
+        Assert.assertTrue(aaa_permutations.contains("aa"));
     }
 
     @Test
@@ -67,13 +123,37 @@ public class PermutationsTest {
     }
 
     @Test
-    public void checkNumberOfPermutationsOf_aab_is_3() {
-        Assert.assertEquals(3, aab_permutations.size());
+    public void checkNumberOfPermutationsOf_aab_is_8() {
+        Assert.assertEquals(8, aab_permutations.size());
     }
 
     @Test
+    public void checkPermutationsOf_aab_contains_a() {
+        Assert.assertTrue(aab_permutations.contains("a"));
+    }
+
+    @Test
+    public void checkPermutationsOf_aab_contains_b() {
+        Assert.assertTrue(aab_permutations.contains("b"));
+    }
+
+    @Test
+    public void checkPermutationsOf_aab_contains_aa() {
+        Assert.assertTrue(aab_permutations.contains("aa"));
+    }
+
+    @Test
+    public void checkPermutationsOf_aab_contains_ab() {
+        Assert.assertTrue(aab_permutations.contains("ab"));
+    }
+
+    @Test
+    public void checkPermutationsOf_aab_contains_ba() {
+        Assert.assertTrue(aab_permutations.contains("ba"));
+    }
+    @Test
     public void checkPermutationsOf_aab_contains_aab() {
-        Assert.assertTrue(aab_permutations.contains("abc"));
+        Assert.assertTrue(aab_permutations.contains("aab"));
     }
 
     @Test
