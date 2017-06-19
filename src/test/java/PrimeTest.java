@@ -31,4 +31,8 @@ public class PrimeTest {
         Assert.assertFalse(Prime.isPrime(15));
     }
 
+    @Test
+    public void test_isPrime_20_returns_false() throws Exception {
+        Assert.assertFalse(Prime.isPrime(20));
+    }
 }
