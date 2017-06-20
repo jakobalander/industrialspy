@@ -1,5 +1,4 @@
-import com.google.common.base.Stopwatch;
-
+import java.util.Scanner;
 import java.util.TreeSet;
 
 /**
@@ -7,20 +6,23 @@ import java.util.TreeSet;
  */
 public class Main {
     public static void main(String[] args) {
-        String str = "1276543";
-        int primes = 0;
-        Stopwatch stopwatch = Stopwatch.createStarted();
-        TreeSet<String> perms = new Permutations().createPermuations(str);
-
-        System.out.println(stopwatch.elapsed());
-        stopwatch.reset();
-        stopwatch.start();
-        for(String s : perms) {
-            if(Prime.isPrime(Integer.parseInt(s))) {
-                primes++;
+        Scanner sc = new Scanner(System.in);
+        int iterations = Integer.parseInt(sc.nextLine());
+        for (int i = 0; i < iterations; i++) {
+            String line = sc.nextLine();
+            int primes = 0;
+            TreeSet<String> perms = new Permutations().createPermuations(line);
+            perms.remove("");
+            TreeSet<Integer> ints = new TreeSet<>();
+            for(String s : perms) {
+                ints.add(Integer.parseInt(s));
             }
+            for(int num : ints) {
+                if(Prime.isPrime(num)) {
+                    primes++;
+                }
+            }
+            System.out.println(primes);
         }
-        System.out.println(stopwatch.elapsed());;
-        System.out.println("Number of primes " + primes);
     }
 }
