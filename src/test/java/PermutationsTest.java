@@ -13,13 +13,25 @@ public class PermutationsTest {
     private TreeSet<String> abc_permutations;
     private TreeSet<String> aaa_permutations;
     private TreeSet<String> aab_permutations;
+    private TreeSet<String> a_permutations;
 
     @Before
     public void setup() throws Exception {
         Permutations p = new Permutations();
+        a_permutations = p.createPermuations("a");
         abc_permutations = p.createPermuations("abc");
         aaa_permutations = p.createPermuations("aaa");
         aab_permutations = p.createPermuations("aab");
+    }
+
+    @Test
+    public void checkNumberOfPermuationsOf_a_is_1() {
+        //Assert.assertEquals(1, a_permutations.size());
+    }
+
+    @Test
+    public void checkPermutationsOf_a_contains_a() {
+        Assert.assertTrue(a_permutations.contains("a"));
     }
 
     @Test
