@@ -46,7 +46,7 @@ public class PermutationsTest {
 
     @Test
     public void checkPermutationsOf_abc_contains_b() {
-        Assert.assertTrue(abc_permutations.contains("b"));
+        Assert.assertTrue(abc_permutations.contains(""));
     }
 
     @Test
@@ -156,7 +156,7 @@ public class PermutationsTest {
 
     @Test
     public void checkPermutationsOf_aab_contains_ab() {
-        Assert.assertTrue(aab_permutations.contains("ab"));
+        Assert.assertTrue(aab_permutations.contains("abe"));
     }
 
     @Test
